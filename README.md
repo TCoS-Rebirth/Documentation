@@ -3,7 +3,7 @@ All reversing documented here is currently based on the client beta 0.9.
 ### Sb\_client.exe arguments ###
 --show\_console: show the console displaying the log (you can also take control of the console and use some functions/load packages)  
 --packet_log: enable logging of the packets sended et received  
---world: not really sure what this option means... seems like bypassing universe selection but does not seem to work  
+--world universeID: bypass universe selection and ask for the universe with ID universeID  
 -- uc\_debugger: (check syntax) attach unreal engine debugger to the process. Sadly scripts files are not reachable.  
 --unreal\_log: seems to do nothing. Test
 
@@ -57,7 +57,7 @@ Interesting methods in d\_message:
  - ReadMessage (const struct d\_message&)  
  - WriteMessage (struct d\_message&)  
 
-*** /!\\ /!\\ /!\\ ==>WriteMessage and ReadMessage are very interesting to study for each message because it's there you can understand what is put inside the packet.<== /!\\ /!\\ /!\\***
+**/!\\ /!\\ /!\\ ==>WriteMessage and ReadMessage are very interesting to study for each message because it's there you can understand what is put inside the packet.<== /!\\ /!\\ /!\\**
 
 This is how I try to reverse packets, by studying these two methods and their context (who calls them, what structure do they fill etc).
 
